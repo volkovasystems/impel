@@ -1,0 +1,27 @@
+{
+  "name": "impel",
+  "version": "0.0.0",
+  "description": "Force harden property.",
+  "main": "impel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/impel.git"
+  },
+  "keywords": [
+    "force",
+    "harden",
+    "impel"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/impel/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/impel#readme",
+  "dependencies": {
+    "zelf": "0.0.4"
+  }
+}

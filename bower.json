@@ -1,0 +1,26 @@
+{
+  "name": "impel",
+  "version": "0.0.0",
+  "description": "Force harden property.",
+  "main": "impel.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "force",
+    "harden",
+    "impel"
+  ],
+  "homepage": "https://github.com/volkovasystems/impel",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "zelf": "^0.0.4"
+  }
+}
