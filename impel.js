@@ -32,6 +32,9 @@
 			"file": "impel.js",
 			"module": "impel",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"email": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/impel.git",
 			"test": "impel-test.js",
@@ -55,22 +58,18 @@
 
 	@include:
 		{
+			"falzy": "falzy",
+			"protype": "protype",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-if( typeof window == "undefined" ){
-	var zelf = require( "zelf" );
-}
+const falzy = require( "falzy" );
+const protype = require( "protype" );
+const zelf = require( "zelf" );
 
-if( typeof window != "undefined" &&
-	!( "zelf" in window ) )
-{
-	throw new Error( "zelf is not defined" );
-}
-
-var impel = function impel( property, value, entity ){
+const impel = function impel( property, value, entity ){
 	/*;
 		@meta-configuration:
 			{
@@ -81,9 +80,7 @@ var impel = function impel( property, value, entity ){
 		@end-meta-configuration
 	*/
 
-	if( !property ||
-		typeof property != "string" )
-	{
+	if( falzy( property ) || !protype( property, STRING ) ) {
 		throw new Error( "invalid property" );
 	}
 
@@ -101,6 +98,4 @@ var impel = function impel( property, value, entity ){
 	return entity;
 };
 
-if( typeof module != "undefined" ){
-	module.exports = impel;
-}
+module.exports = impel;
