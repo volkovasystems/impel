@@ -1,10 +1,13 @@
 {
   "name": "impel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Force harden property.",
   "main": "impel.js",
+  "support": "impel.support.js",
+  "deploy": "impel.deploy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel impel.js -o impel.support.js && webpack",
+    "test": "mocha impel-test.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +28,19 @@
   },
   "homepage": "https://github.com/volkovasystems/impel#readme",
   "dependencies": {
-    "falzy": "^0.5.0",
-    "protype": "^0.4.0",
-    "zelf": "^0.3.0"
+    "asea": "^0.6.0",
+    "babel-runtime": "^6.20.0",
+    "falzy": "^0.7.0",
+    "kein": "^0.4.0",
+    "protype": "^0.8.0",
+    "zelf": "^0.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "source-map-loader": "^0.1.6",
+    "webpack": "^1.14.0"
   }
 }

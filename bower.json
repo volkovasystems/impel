@@ -1,8 +1,10 @@
 {
   "name": "impel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Force harden property.",
   "main": "impel.js",
+  "support": "impel.support.js",
+  "deploy": "impel.deploy.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
@@ -22,8 +24,10 @@
     "tests"
   ],
   "dependencies": {
-    "falzy": "^0.5.0",
-    "protype": "^0.4.0",
-    "zelf": "^0.3.0"
+    "asea": "^0.6.0",
+    "falzy": "^0.7.0",
+    "protype": "^0.8.0",
+    "zelf": "^0.4.0",
+    "kein": "^0.4.0"
   }
 }
