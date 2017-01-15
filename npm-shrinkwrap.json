@@ -1,6 +1,6 @@
 {
   "name": "impel",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "asea": {
       "version": "0.6.0",
@@ -167,9 +167,9 @@
       }
     },
     "kein": {
-      "version": "0.4.0",
+      "version": "0.5.0",
       "from": "kein@latest",
-      "resolved": "https://registry.npmjs.org/kein/-/kein-0.4.0.tgz",
+      "resolved": "https://registry.npmjs.org/kein/-/kein-0.5.0.tgz",
       "dependencies": {
         "babel-runtime": {
           "version": "6.20.0",
