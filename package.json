@@ -1,6 +1,6 @@
 {
   "name": "impel",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Force harden property.",
   "main": "impel.js",
   "support": "impel.support.js",
@@ -28,12 +28,12 @@
   },
   "homepage": "https://github.com/volkovasystems/impel#readme",
   "dependencies": {
-    "asea": "^0.7.0",
+    "asea": "^0.8.0",
     "babel-runtime": "^6.22.0",
-    "falzy": "^0.8.0",
-    "kein": "^0.6.0",
-    "protype": "^0.9.0",
-    "zelf": "^0.5.0"
+    "falzy": "^0.10.0",
+    "kein": "^0.8.0",
+    "protype": "^0.11.0",
+    "zelf": "^0.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
