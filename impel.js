@@ -110,7 +110,7 @@ const impel = function impel( property, value, entity ){
 			} );
 
 		}catch( error ){
-			throw new Error( `cannot bind impel, error, ${ error }` );
+			throw new Error( `cannot bind impel, error, ${ error.stack }` );
 		}
 	}
 
