@@ -1,6 +1,6 @@
 {
   "name": "impel",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Force harden property.",
   "main": "impel.deploy.js",
   "support": "impel.support.js",
