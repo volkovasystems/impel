@@ -97,7 +97,7 @@ var impel = function impel(property, value, entity) {
 
 	if ((asea.SERVER && entity !== global ||
 	asea.CLIENT && entity !== window) &&
-	!kein(entity, "impel"))
+	!kein("impel", entity))
 	{
 		try {
 			Object.defineProperty(entity, "impel", {
