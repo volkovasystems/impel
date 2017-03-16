@@ -20,4 +20,5 @@ falzy \
 kein \
 protype \
 zelf \
---save
+--save \
+--force-latest
