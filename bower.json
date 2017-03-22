@@ -1,6 +1,6 @@
 {
   "name": "impel",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Force harden property.",
   "main": "impel.deploy.js",
   "support": "impel.support.js",
@@ -23,10 +23,10 @@
     "tests"
   ],
   "dependencies": {
-    "asea": "^0.12.0",
-    "falzy": "^0.16.0",
-    "kein": "^0.15.0",
-    "protype": "^0.20.0",
-    "zelf": "^0.10.0"
+    "asea": "^0.13.0",
+    "falzy": "^0.17.0",
+    "kein": "^0.16.0",
+    "protype": "^0.21.0",
+    "zelf": "^0.11.0"
   }
 }
