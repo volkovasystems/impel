@@ -1,8 +1,6 @@
 yarn add \
 babel-runtime \
-asea \
 falzy \
-kein \
 protype \
 zelf \
 --save && \
@@ -15,9 +13,7 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-asea \
 falzy \
-kein \
 protype \
 zelf \
 --save \

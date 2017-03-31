@@ -48,18 +48,14 @@
 
 	@include:
 		{
-			"asea": "asea",
 			"falzy": "falzy",
-			"kein": "kein",
 			"protype": "protype",
 			"zelf": "zelf",
 		}
 	@end-include
 */
 
-const asea = require( "asea" );
 const falzy = require( "falzy" );
-const kein = require( "kein" );
 const protype = require( "protype" );
 const zelf = require( "zelf" );
 
@@ -68,9 +64,9 @@ const impel = function impel( property, value, entity ){
 		@meta-configuration:
 			{
 				"property:required": [
+					"number",
 					"string",
 					"symbol",
-					"number"
 				],
 				"value:required": "*",
 				"entity:optional": "object"
@@ -78,13 +74,11 @@ const impel = function impel( property, value, entity ){
 		@end-meta-configuration
 	*/
 
-	if( falzy( property ) || !protype( property, STRING, SYMBOL, NUMBER ) ){
+	if( falzy( property ) || !protype( property, NUMBER + STRING + SYMBOL ) ){
 		throw new Error( "invalid property" );
 	}
 
-	let self = zelf( this );
-
-	entity = entity || self;
+	entity = entity || zelf( this );
 
 	try{
 		Object.defineProperty( entity, property, {
@@ -95,23 +89,6 @@ const impel = function impel( property, value, entity ){
 		} );
 
 	}catch( error ){ }
-
-	if( ( ( asea.SERVER && entity !== global ) ||
-		( asea.CLIENT && entity !== window ) ) &&
-		!kein( "impel", entity ) )
-	{
-		try{
-			Object.defineProperty( entity, "impel", {
-				"enumerable": false,
-				"configurable": false,
-				"writable": false,
-				"value": impel.bind( self )
-			} );
-
-		}catch( error ){
-			throw new Error( `cannot bind impel, error, ${ error.stack }` );
-		}
-	}
 
 	return entity;
 };
