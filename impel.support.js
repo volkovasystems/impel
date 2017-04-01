@@ -48,18 +48,14 @@
                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                         	@include:
                                                                                                                                                                                                                                                         		{
-                                                                                                                                                                                                                                                        			"asea": "asea",
                                                                                                                                                                                                                                                         			"falzy": "falzy",
-                                                                                                                                                                                                                                                        			"kein": "kein",
                                                                                                                                                                                                                                                         			"protype": "protype",
                                                                                                                                                                                                                                                         			"zelf": "zelf",
                                                                                                                                                                                                                                                         		}
                                                                                                                                                                                                                                                         	@end-include
                                                                                                                                                                                                                                                         */
 
-var asea = require("asea");
 var falzy = require("falzy");
-var kein = require("kein");
 var protype = require("protype");
 var zelf = require("zelf");
 
@@ -68,9 +64,9 @@ var impel = function impel(property, value, entity) {
                                                      	@meta-configuration:
                                                      		{
                                                      			"property:required": [
+                                                     				"number",
                                                      				"string",
                                                      				"symbol",
-                                                     				"number"
                                                      			],
                                                      			"value:required": "*",
                                                      			"entity:optional": "object"
@@ -78,13 +74,11 @@ var impel = function impel(property, value, entity) {
                                                      	@end-meta-configuration
                                                      */
 
-	if (falzy(property) || !protype(property, STRING, SYMBOL, NUMBER)) {
+	if (falzy(property) || !protype(property, NUMBER + STRING + SYMBOL)) {
 		throw new Error("invalid property");
 	}
 
-	var self = zelf(this);
-
-	entity = entity || self;
+	entity = entity || zelf(this);
 
 	try {
 		(0, _defineProperty2.default)(entity, property, {
@@ -95,23 +89,6 @@ var impel = function impel(property, value, entity) {
 
 
 	} catch (error) {}
-
-	if ((asea.SERVER && entity !== global ||
-	asea.CLIENT && entity !== window) &&
-	!kein("impel", entity))
-	{
-		try {
-			Object.defineProperty(entity, "impel", {
-				"enumerable": false,
-				"configurable": false,
-				"writable": false,
-				"value": impel.bind(self) });
-
-
-		} catch (error) {
-			throw new Error("cannot bind impel, error, " + error.stack);
-		}
-	}
 
 	return entity;
 };
