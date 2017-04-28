@@ -44,12 +44,15 @@
 
 	@module-documentation:
 		Force harden property.
+
+		This will make the property non-configurable, non-enumerable and non-writable.
 	@end-module-documentation
 
 	@include:
 		{
 			"falzy": "falzy",
 			"protype": "protype",
+			"wichevr": "wichevr",
 			"zelf": "zelf",
 		}
 	@end-include
@@ -57,6 +60,7 @@
 
 const falzy = require( "falzy" );
 const protype = require( "protype" );
+const wichevr = require( "wichevr" );
 const zelf = require( "zelf" );
 
 const impel = function impel( property, value, entity ){
@@ -78,14 +82,15 @@ const impel = function impel( property, value, entity ){
 		throw new Error( "invalid property" );
 	}
 
-	entity = entity || zelf( this );
+	entity = wichevr( entity, zelf( this ) );
 
 	try{
 		Object.defineProperty( entity, property, {
-			"enumerable": false,
+			"value": value,
+
 			"configurable": false,
-			"writable": false,
-			"value": value
+			"enumerable": false,
+			"writable": false
 		} );
 
 	}catch( error ){ }

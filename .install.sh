@@ -2,6 +2,7 @@ yarn add \
 babel-runtime \
 falzy \
 protype \
+wichevr \
 zelf \
 --save && \
 yarn add \
@@ -15,6 +16,7 @@ webpack \
 bower install \
 falzy \
 protype \
+wichevr \
 zelf \
 --save \
 --force-latest

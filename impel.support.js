@@ -44,12 +44,15 @@
                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                         	@module-documentation:
                                                                                                                                                                                                                                                         		Force harden property.
+                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                        		This will make the property non-configurable, non-enumerable and non-writable.
                                                                                                                                                                                                                                                         	@end-module-documentation
                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                         	@include:
                                                                                                                                                                                                                                                         		{
                                                                                                                                                                                                                                                         			"falzy": "falzy",
                                                                                                                                                                                                                                                         			"protype": "protype",
+                                                                                                                                                                                                                                                        			"wichevr": "wichevr",
                                                                                                                                                                                                                                                         			"zelf": "zelf",
                                                                                                                                                                                                                                                         		}
                                                                                                                                                                                                                                                         	@end-include
@@ -57,6 +60,7 @@
 
 var falzy = require("falzy");
 var protype = require("protype");
+var wichevr = require("wichevr");
 var zelf = require("zelf");
 
 var impel = function impel(property, value, entity) {
@@ -78,14 +82,15 @@ var impel = function impel(property, value, entity) {
 		throw new Error("invalid property");
 	}
 
-	entity = entity || zelf(this);
+	entity = wichevr(entity, zelf(this));
 
 	try {
 		(0, _defineProperty2.default)(entity, property, {
-			"enumerable": false,
+			"value": value,
+
 			"configurable": false,
-			"writable": false,
-			"value": value });
+			"enumerable": false,
+			"writable": false });
 
 
 	} catch (error) {}
