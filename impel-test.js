@@ -10,3 +10,4 @@ impel( "property", "value", test )
 assert.equal( test.property, "value", "should have value" );
 
 console.log( "ok" );
+
