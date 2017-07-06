@@ -1,8 +1,43 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./impel.deploy.js">
-		</script>
+		<title>impel unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./impel.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "impel unit test", function( assert ) {
+
+				let test1 = { };
+				impel( "hello", "world", test1 );
+				assert.equal( test1.hello, "world", "should have value 'hello'" );
+
+				let descriptor = Object.getOwnPropertyDescriptor( test1, "hello" );
+
+				assert.equal( descriptor.configurable, false, "should return false" );
+
+				assert.equal( descriptor.enumerable, false, "should return false" );
+
+				assert.equal( descriptor.writable, false, "should return false" );
+
+				impel( "property", "value" );
+				assert.equal( window.property, "value", "should have 'value'" );
+
+				let test2 = { };
+				impel( "property", "value", test2 )
+				assert.equal( test2.property, "value", "should have 'value'" );
+
+			} );
+		</script>
+	</body>
 </html>
