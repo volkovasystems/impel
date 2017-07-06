@@ -5,7 +5,6 @@ const impel = require( "./impel.js" );
 let test1 = { };
 impel( "hello", "world", test1 );
 let descriptor = Object.getOwnPropertyDescriptor( test1, "hello" );
-
 assert.equal( test1.hello, "world", "should have value 'hello'" );
 
 assert.equal( descriptor.configurable, false, "should return false" );
