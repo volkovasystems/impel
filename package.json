@@ -1,6 +1,6 @@
 {
   "name": "impel",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Force harden property.",
   "main": "impel.js",
   "support": "impel.support.js",
@@ -21,7 +21,8 @@
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
   "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
@@ -32,15 +33,15 @@
     "babel-runtime": "^6.23.0",
     "falzy": "^0.20.0",
     "protype": "^0.22.0",
-    "wichevr": "^0.10.0",
+    "wichevr": "^0.12.0",
     "zelf": "^0.12.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
+    "babel-core": "^6.25.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.6.1"
+    "webpack": "^3.0.0"
   }
 }
