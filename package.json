@@ -1,6 +1,6 @@
 {
   "name": "impel",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "Force harden property.",
   "main": "impel.js",
   "support": "impel.support.js",
@@ -33,7 +33,7 @@
     "babel-runtime": "^6.23.0",
     "falzy": "^0.20.0",
     "protype": "^0.22.0",
-    "wichevr": "^0.12.0",
+    "wichevr": "^0.13.0",
     "zelf": "^0.12.0"
   },
   "devDependencies": {
@@ -42,6 +42,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^3.0.0"
+    "webpack": "^3.1.0"
   }
 }
