@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Impel QUnit Example</title>
-  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
-  <script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-  <script type="application/javascript" src="./impel.deploy.js"></script>
-</head>
+		<title>test:impel</title>
 
-<body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
+	</head>
 
-  <script>
-    QUnit.test("hello test", function (assert) {
-      let test = {};
-      impel("hello", "world", test);
-      let descriptor = Object.getOwnPropertyDescriptor(test, "hello");
-      assert.equal(test.hello, "world", "should have value 'hello'");
-      assert.equal(descriptor.configurable, false, "should be false");
-      assert.equal(descriptor.enumerable, false, "should be false");
-      assert.equal(descriptor.writable, false, "should be false");
-      impel("hello", "value", test);
-      assert.equal(test.hello, "world", "should have value 'hello'");
+	<body>
+		<div id="mocha"></div>
 
-    });
-  </script>
-</body>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
+		<script type="application/javascript">
+			mocha.setup( "bdd" );
+		</script>
+
+		<script type="application/javascript" src="./test.deploy.js"></script>
+
+		<script type="application/javascript">
+			mocha.run( );
+		</script>
+	</body>
 </html>

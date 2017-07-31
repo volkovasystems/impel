@@ -1,0 +1,46 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2017-07-31T12:32:19.846Z",
+    "end": "2017-07-31T12:32:19.852Z",
+    "duration": 6
+  },
+  "tests": [
+    {
+      "title": "should have value",
+      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should have value",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should have value",
+      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should have value",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "should have value",
+      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should have value",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should have value",
+      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should have value",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}
