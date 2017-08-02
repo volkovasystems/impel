@@ -74,7 +74,7 @@ const path = require( "path" );
 describe( "impel", ( ) => {
 
 	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value" , ( ) => {
+		it( "should be equal to value" , ( ) => {
 
 			impel( "property", "value" );
 			assert.equal( global.property, "value" );
@@ -83,7 +83,7 @@ describe( "impel", ( ) => {
 	} );
 
 	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value", ( ) => {
+		it( "should be equal to value", ( ) => {
 
 			let test = { };
 			impel( "property", "value", test );
@@ -103,7 +103,7 @@ describe( "impel", ( ) => {
 describe( "impel", ( ) => {
 
 	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value" , ( ) => {
+		it( "should be equal to value" , ( ) => {
 
 			impel( "property", "value" );
 			assert.equal( global.property, "value" );
@@ -112,7 +112,7 @@ describe( "impel", ( ) => {
 	} );
 
 	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value", ( ) => {
+		it( "should be equal to value", ( ) => {
 
 		let test = { };
 		impel( "property", "value", test )
@@ -132,124 +132,104 @@ describe( "impel", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "impel with property and value", ( ) => {
+	describe( "impel( 'property', 'value' )", ( ) => {
 
-		describe( "impel( 'property', 'value' )", ( ) => {
+		it( "should be equal to 'value'", ( ) => {
 
-			it( "should be equal to 'value'", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+				function( ){
+					impel( "property", "value" );
+					return window.property;
+				}
+			).value;
 
-				let result = browser.url( bridgeURL ).execute(
-					function( ){
-						impel( "property", "value" );
-						return window.property;
-					}
-				).value;
-
-				assert.equal( result, "value" );
-
-			} );
+			assert.equal( result, "value" );
 
 		} );
 
 	} );
 
-	describe( "impel with property, value and entity", ( ) => {
+	describe( "impel( 'hello', 'world', { } )", ( ) => {
 
-		describe( "impel( 'hello', 'world', { } )", ( ) => {
+		it( "should be equal to 'world'", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
 
-			it( "should be equal to 'world'", ( ) => {
-				//: @ignore:
-				let result = browser.url( bridgeURL ).execute(
+				function( ){
+					let test = { };
+					impel( "hello", "world", test );
+					return test.hello;
+				}
 
-					function( ){
-						let test = { };
-						impel( "hello", "world", test );
-						return test.hello;
-					}
-
-				).value;
-				//: @end-ignore
-				assert.equal( result, "world" );
-
-			} );
-
-			describe( "Property descriptor", ( ) => {
-
-				it( "should be equal to false", ( ) => {
-					//: @ignore:
-					let result = browser.url( bridgeURL ).execute(
-
-						function( ){
-							let test = { };
-							impel( "hello", "world", test );
-							let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
-							return descriptor.configurable;
-						}
-
-					).value;
-					//: @end-ignore
-					assert.equal( result, false );
-
-				} );
-
-				it( "should be equal to false", ( ) => {
-					//: @ignore:
-					let result = browser.url( bridgeURL ).execute(
-
-						function( ){
-							let test = { };
-							impel( "hello", "world", test );
-							let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
-							return descriptor.enumerable;
-						}
-
-					).value;
-
-					assert.equal( result, false );
-					//: @end-ignore
-				} );
-
-				it( "should be equal to false", ( ) => {
-					//: @ignore:
-					let result = browser.url( bridgeURL ).execute(
-
-						function( ){
-							let test = { };
-							impel( "hello", "world", test );
-							let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
-							return descriptor.writable;
-						}
-
-					).value;
-					//: @end-ignore
-					assert.equal( result, false );
-
-				} );
-
-			} );
+			).value;
+			//: @end-ignore
+			assert.equal( result, "world" );
 
 		} );
 
-		describe( "impel( 'property', 'value', { } )", ( ) => {
+	} );
 
-			it( "should be equal to 'value'", ( ) => {
-				//: @ignore:
-				let result = browser.url( bridgeURL ).execute(
+	describe( "Property descriptor configurable", ( ) => {
 
-					function( ){
-						let test = { };
-						impel( "property", "value", test );
-						return test.property;
-					}
+		it( "should be equal to false", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
 
-				).value;
-				//: @end-ignore
-				assert.equal( result, "value" );
+				function( ){
+					let test = { };
+					impel( "hello", "world", test );
+					let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
+					return descriptor.configurable;
+				}
 
-			} );
+			).value;
+			//: @end-ignore
+			assert.equal( result, false );
 
 		} );
 
+	} );
+
+	describe( "Property descriptor enumerable", ( ) => {
+
+		it( "should be equal to false", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let test = { };
+					impel( "hello", "world", test );
+					let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
+					return descriptor.enumerable;
+				}
+
+			).value;
+
+			assert.equal( result, false );
+			//: @end-ignore
+		} );
+
+	} );
+
+	describe( "Property descriptor writable", ( ) => {
+
+		it( "should be equal to false", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let test = { };
+					impel( "hello", "world", test );
+					let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
+					return descriptor.writable;
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, false );
+
+		} );
+		
 	} );
 
 } );
