@@ -72,7 +72,7 @@ const path = require( "path" );
 //: @server:
 
 describe( "impel", ( ) => {
-	
+
 	describe( `"impel( "property", "value" )"`, ( ) => {
 		it( "should have value" , ( ) => {
 
@@ -97,11 +97,11 @@ describe( "impel", ( ) => {
 //: @end-server
 
 
-//: @client: 
+//: @client:
 
 
 describe( "impel", ( ) => {
-	
+
 	describe( `"impel( "property", "value" )"`, ( ) => {
 		it( "should have value" , ( ) => {
 
@@ -130,42 +130,30 @@ describe( "impel", ( ) => {
 
 describe( "impel", ( ) => {
 
-	
-	let directory = __dirname;
-	let testBridge = path.resolve( directory, "bridge.html" );
-	let bridgeURL = `file://${ testBridge }`;
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value" , ( ) => {
+	describe( "impel with property, value and entity", ( ) => {
 
-		assert.equal(impel( true, true ) );
+		describe( "impel( 'hello', 'world', { } )", ( ) => {
+			it( "should be equal to 'world'", ( ) => {
+
+				let result = browser.url( bridgeURL ).execute(
+
+					function( ){
+						let test = { };
+						return impel( "hello", "world", test );;
+					}
+
+				).value;
+
+				assert.equal( result, "world" );
+
+			} );
 
 		} );
+
 	} );
 
-	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value", ( ) => {
-
-		assert.equal(impel( true, true ) );
-
-		} );
-	} );
 } );
 
 //: @end-bridge
-
-
-
-
-
-
-// const assert = require( "assert" );
-// const impel = require( "./impel.js" );
-
-// impel( "property", "value" );
-// assert.equal( global.property, "value", "should have value" );
-
-
-
-// console.log( "ok" );
-
