@@ -132,21 +132,74 @@ describe( "impel", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "impel with property, value and entity", ( ) => {
+	describe( "impel( 'hello', 'world', { } )", ( ) => {
 
-		describe( "impel( 'hello', 'world', { } )", ( ) => {
-			it( "should be equal to 'world'", ( ) => {
+		it( "should be equal to 'world'", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
 
+				function( ){
+					let test = { };
+					impel( "hello", "world", test );
+					return test.hello;
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, "world" );
+
+		} );
+
+		describe( "Property descriptor", ( ) => {
+
+			it( "should be equal to false", ( ) => {
+				//: @ignore:
 				let result = browser.url( bridgeURL ).execute(
 
 					function( ){
 						let test = { };
-						return impel( "hello", "world", test );;
+						impel( "hello", "world", test );
+						let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
+						return descriptor.configurable;
+					}
+
+				).value;
+				//: @end-ignore
+				assert.equal( result, false );
+
+			} );
+
+			it( "should be equal to false", ( ) => {
+				//: @ignore:
+				let result = browser.url( bridgeURL ).execute(
+
+					function( ){
+						let test = { };
+						impel( "hello", "world", test );
+						let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
+						return descriptor.enumerable;
 					}
 
 				).value;
 
-				assert.equal( result, "world" );
+				assert.equal( result, false );
+				//: @end-ignore
+			} );
+
+			it( "should be equal to false", ( ) => {
+				//: @ignore:
+				let result = browser.url( bridgeURL ).execute(
+
+					function( ){
+						let test = { };
+						impel( "hello", "world", test );
+						let descriptor = Object.getOwnPropertyDescriptor( test, "hello" );
+						return descriptor.writable;
+					}
+
+				).value;
+				//: @end-ignore
+				assert.equal( result, false );
 
 			} );
 
