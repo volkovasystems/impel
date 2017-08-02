@@ -85,9 +85,9 @@ describe( "impel", ( ) => {
 	describe( `"impel( "property", "value" )"`, ( ) => {
 		it( "should have value", ( ) => {
 
-		let test = { };
-		impel( "property", "value", test )
-		assert.equal( test.property, "value");
+			let test = { };
+			impel( "property", "value", test );
+			assert.equal( test.property, "value");
 
 		} );
 	} );
@@ -202,6 +202,43 @@ describe( "impel", ( ) => {
 				assert.equal( result, false );
 
 			} );
+
+		} );
+
+	} );
+
+	describe( "impel( 'property', 'value' )", ( ) => {
+
+		it( "should be equal to 'value'", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+				function( ){
+					impel( "property", "value" );
+					return window.property;
+				}
+			).value;
+
+			assert.equal( result, "value" );
+
+		} );
+
+	} );
+
+	describe( "impel( 'property', 'value', { } )", ( ) => {
+
+		it( "should be equal to 'value'", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					let test = { };
+					impel( "property", "value", test );
+					return test.property;
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, "value" );
 
 		} );
 
