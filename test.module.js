@@ -149,6 +149,7 @@ describe( "impel", ( ) => {
 
 	} );
 
+
 	describe( "impel( 'hello', 'world', { } )", ( ) => {
 
 		it( "should be equal to 'world'", ( ) => {
@@ -168,6 +169,7 @@ describe( "impel", ( ) => {
 		} );
 
 	} );
+
 
 	describe( "Property descriptor configurable", ( ) => {
 
@@ -190,6 +192,7 @@ describe( "impel", ( ) => {
 
 	} );
 
+
 	describe( "Property descriptor enumerable", ( ) => {
 
 		it( "should be equal to false", ( ) => {
@@ -211,6 +214,7 @@ describe( "impel", ( ) => {
 
 	} );
 
+	
 	describe( "Property descriptor writable", ( ) => {
 
 		it( "should be equal to false", ( ) => {
@@ -229,7 +233,7 @@ describe( "impel", ( ) => {
 			assert.equal( result, false );
 
 		} );
-		
+
 	} );
 
 } );
