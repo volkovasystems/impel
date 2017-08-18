@@ -68,9 +68,9 @@ const impel = require( "./impel.js" );
 //: @server:
 
 describe( "impel", ( ) => {
-	
+
 	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value" , ( ) => {
+		it( "should be equal to value" , ( ) => {
 
 			impel( "property", "value" );
 			assert.equal( global.property, "value" );
@@ -79,11 +79,11 @@ describe( "impel", ( ) => {
 	} );
 
 	describe( `"impel( "property", "value" )"`, ( ) => {
-		it( "should have value", ( ) => {
+		it( "should be equal to value", ( ) => {
 
-		let test = { };
-		impel( "property", "value", test )
-		assert.equal( test.property, "value");
+			let test = { };
+			impel( "property", "value", test );
+			assert.equal( test.property, "value");
 
 		} );
 	} );
@@ -96,20 +96,4 @@ describe( "impel", ( ) => {
 
 
 
-
-
-
-
-
-
-
-// const assert = require( "assert" );
-// const impel = require( "./impel.js" );
-
-// impel( "property", "value" );
-// assert.equal( global.property, "value", "should have value" );
-
-
-
-// console.log( "ok" );
 
