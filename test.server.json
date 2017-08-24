@@ -1,46 +1,88 @@
 {
-  "stats": {
-    "suites": 3,
-    "tests": 2,
-    "passes": 2,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-18T01:37:14.887Z",
-    "end": "2017-08-18T01:37:14.895Z",
-    "duration": 8
-  },
-  "tests": [
-    {
-      "title": "should be equal to value",
-      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should be equal to value",
-      "duration": 2,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal to value",
-      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should be equal to value",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ],
-  "pending": [],
-  "failures": [],
-  "passes": [
-    {
-      "title": "should be equal to value",
-      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should be equal to value",
-      "duration": 2,
-      "currentRetry": 0,
-      "err": {}
-    },
-    {
-      "title": "should be equal to value",
-      "fullTitle": "impel \"impel( \"property\", \"value\" )\" should be equal to value",
-      "duration": 0,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ]
+	"stats": {
+		"suites": 6,
+		"tests": 5,
+		"passes": 5,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-24T05:44:45.182Z",
+		"end": "2017-08-24T05:44:45.188Z",
+		"duration": 6
+	},
+	"tests": [
+		{
+			"title": "should be equal to 'value'",
+			"fullTitle": "impel `impel( 'property', 'value' )` should be equal to 'value'",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 'world'",
+			"fullTitle": "impel `impel( 'hello', 'world', { } )` should be equal to 'world'",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "impel `Property descriptor configurable` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "impel `Property descriptor enumerable` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "impel `Property descriptor writable` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to 'value'",
+			"fullTitle": "impel `impel( 'property', 'value' )` should be equal to 'value'",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 'world'",
+			"fullTitle": "impel `impel( 'hello', 'world', { } )` should be equal to 'world'",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "impel `Property descriptor configurable` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "impel `Property descriptor enumerable` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "impel `Property descriptor writable` should be equal to false",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

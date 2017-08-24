@@ -1,0 +1,212 @@
+{
+	"state": {
+		"passed": 5,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-24T05:44:46.297Z",
+	"end": "2017-08-24T05:45:23.403Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "impel",
+			"duration": 0,
+			"start": "2017-08-24T05:45:22.971Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "impel",
+			"duration": 257,
+			"start": "2017-08-24T05:45:22.972Z",
+			"end": "2017-08-24T05:45:23.229Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-24T05:45:22.973Z",
+					"end": "2017-08-24T05:45:22.973Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to 'value'"
+				},
+				{
+					"start": "2017-08-24T05:45:23.063Z",
+					"end": "2017-08-24T05:45:23.063Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to 'value'"
+				},
+				{
+					"start": "2017-08-24T05:45:23.064Z",
+					"end": "2017-08-24T05:45:23.064Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to 'world'"
+				},
+				{
+					"start": "2017-08-24T05:45:23.110Z",
+					"end": "2017-08-24T05:45:23.110Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to 'world'"
+				},
+				{
+					"start": "2017-08-24T05:45:23.111Z",
+					"end": "2017-08-24T05:45:23.111Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-24T05:45:23.152Z",
+					"end": "2017-08-24T05:45:23.152Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-24T05:45:23.153Z",
+					"end": "2017-08-24T05:45:23.154Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-24T05:45:23.190Z",
+					"end": "2017-08-24T05:45:23.191Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-24T05:45:23.191Z",
+					"end": "2017-08-24T05:45:23.191Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-24T05:45:23.228Z",
+					"end": "2017-08-24T05:45:23.229Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "impel",
+					"associatedTest": "should be equal to false"
+				},
+				{
+					"start": "2017-08-24T05:45:23.229Z",
+					"end": "2017-08-24T05:45:23.229Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "impel"
+				}
+			]
+		},
+		{
+			"name": "`impel( 'property', 'value' )`",
+			"duration": 92,
+			"start": "2017-08-24T05:45:22.972Z",
+			"end": "2017-08-24T05:45:23.064Z",
+			"tests": [
+				{
+					"name": "should be equal to 'value'",
+					"start": "2017-08-24T05:45:22.973Z",
+					"end": "2017-08-24T05:45:23.063Z",
+					"duration": 90,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`impel( 'hello', 'world', { } )`",
+			"duration": 46,
+			"start": "2017-08-24T05:45:23.064Z",
+			"end": "2017-08-24T05:45:23.110Z",
+			"tests": [
+				{
+					"name": "should be equal to 'world'",
+					"start": "2017-08-24T05:45:23.064Z",
+					"end": "2017-08-24T05:45:23.110Z",
+					"duration": 46,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`Property descriptor configurable`",
+			"duration": 42,
+			"start": "2017-08-24T05:45:23.111Z",
+			"end": "2017-08-24T05:45:23.153Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-08-24T05:45:23.111Z",
+					"end": "2017-08-24T05:45:23.152Z",
+					"duration": 41,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`Property descriptor enumerable`",
+			"duration": 38,
+			"start": "2017-08-24T05:45:23.153Z",
+			"end": "2017-08-24T05:45:23.191Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-08-24T05:45:23.153Z",
+					"end": "2017-08-24T05:45:23.190Z",
+					"duration": 37,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`Property descriptor writable`",
+			"duration": 38,
+			"start": "2017-08-24T05:45:23.191Z",
+			"end": "2017-08-24T05:45:23.229Z",
+			"tests": [
+				{
+					"name": "should be equal to false",
+					"start": "2017-08-24T05:45:23.191Z",
+					"end": "2017-08-24T05:45:23.228Z",
+					"duration": 37,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
